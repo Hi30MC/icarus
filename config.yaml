@@ -1,25 +1,32 @@
+units:
+  # padding
+  px: u + 4
+  py: u + 4
+  # half padding
+  hx: px / 2
+  hy: py / 2
 points:
   zones:
     matrix:
       columns:
         macro:
-          key.column_net: P017
+          key.column_net: P104
         outer:
-          key.column_net: P020
+          key.column_net: P011
         pinky:
           key.stagger: 3
-          key.column_net: P022
+          key.column_net: P100
         ring:
           key.column_net: P024
-          key.stagger: 3
+          key.stagger: 3 + u
         middle:
-          key.column_net: P100
+          key.column_net: P022
           key.stagger: 5
         index:
-          key.column_net: P011
+          key.column_net: P020
           key.stagger: -5
         inner:
-          key.column_net: P104
+          key.column_net: P017
           key.stagger: -6
       rows:
         space:
@@ -32,40 +39,90 @@ points:
           row_net: P029
         num:
           row_net: P031
-  mirror:
-    ref: matrix_inner_home
-    distance: 30
+  # rotate: -15
+  # mirror:
+  #   ref: matrix_inner_num
+  #   distance: 2u
 outlines:
-  left:
-    - where: true
-      what: rectangle
-      size: [u + 2, u+2]
+  left_pcb:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_macro_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_pinky_num
+          shift: [-0.5px, 0.5py-3]
+        - ref: matrix_pinky_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_ring_num
+          shift: [-0.5px, -0.5py+1]
+        - ref: matrix_ring_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_middle_num
+          shift: [-hx, hy - 5]
+        - ref: matrix_middle_num
+          shift: [-hx, hy]
+        - ref: matrix_index_num
+          shift: [-hx, hy + 5]
+        # - ref: matrix_index_num
+        #   shift: [-hx, hy]
+        # - ref: matrix_inner_num
+        #   shift: [-hx , hy+ 6]
+        # - ref: matrix_inner_num
+        #   shift: [-hx, hy]
+        - ref: matrix_inner_num
+          shift: [hx, hy]
+        - ref: matrix_inner_space
+          shift: [hx, -hy-1u]
+        # - ref: matrix_pinky_space
+        #   shift: [hx, hy-7]
+        - ref: matrix_pinky_space
+          shift: [hx, -hy-3]
+        - ref: matrix_macro_space
+          shift: [-hx, -hy]
       fillet: 2
   leftkeys:
     - where: true
       what: rectangle
-      size: [14 , 14]
+      size: [14, 14]
+  leftframe:
+    - where: true
+      what: rectangle
+      size: [px, py]
+      fillet: 2
   leftcutout:
-    - name: left
+    - name: leftframe
     - operation: subtract
       name: leftkeys
 pcbs:
   left:
     outlines:
       main:
-        outline: left
+        outline: left_pcb
     footprints:
-      keyswitches:
+      mx_hotswap:
         where: true
         what: mx
         params:
+          keycaps: true
           hotswap: true
-          from: "{{col_net}}"
+          from: "{{column_net}}"
           to: "{{colrow}}"
+      diode:
+        where: true
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      # microcontroller
       nice_nano:
         what: nice_nano
         params:
           orientation: up
         where:
-          ref: matrix_inner_num
-          shift: [-9, -2]
+          ref: matrix_inner_space
+          shift: [-0.5u, -1u]
+          rotate: 180
+          # battery jack
