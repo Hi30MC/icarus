@@ -8,6 +8,8 @@ units:
 points:
   zones:
     matrix:
+      anchor:
+        shift: [100, -200]
       columns:
         macro:
           key.column_net: P104
@@ -30,21 +32,21 @@ points:
           key.stagger: -6
       rows:
         space:
-          row_net: P113
+          row_net: P031
         bottom:
-          row_net: P115
+          row_net: P029
         home:
           row_net: P002
         top:
-          row_net: P029
+          row_net: P115
         num:
-          row_net: P031
-  # rotate: -15
-  # mirror:
-  #   ref: matrix_inner_num
-  #   distance: 2u
+          row_net: P113
+  rotate: -15
+  mirror:
+    ref: matrix_inner_num
+    distance: 2u
 outlines:
-  left_pcb:
+  leftboard:
     - what: polygon
       operation: stack
       points:
@@ -91,14 +93,56 @@ outlines:
       size: [px, py]
       fillet: 2
   leftcutout:
-    - name: leftframe
+    - name: leftboard
     - operation: subtract
       name: leftkeys
+  rightboard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_macro_num
+          shift: [-0.5px, 0.5py]
+        - ref: mirror_matrix_pinky_num
+          shift: [-0.5px, 0.5py-3]
+        - ref: mirror_matrix_pinky_num
+          shift: [-0.5px, 0.5py]
+        - ref: mirror_matrix_ring_num
+          shift: [-0.5px, -0.5py+1]
+        - ref: mirror_matrix_ring_num
+          shift: [-0.5px, 0.5py]
+        - ref: mirror_matrix_middle_num
+          shift: [-hx, hy - 5]
+        - ref: mirror_matrix_middle_num
+          shift: [-hx, hy]
+        - ref: mirror_matrix_index_num
+          shift: [-hx, hy + 5]
+        # - ref: matrix_index_num
+        #   shift: [-hx, hy]
+        # - ref: matrix_inner_num
+        #   shift: [-hx , hy+ 6]
+        # - ref: matrix_inner_num
+        #   shift: [-hx, hy]
+        - ref: mirror_matrix_inner_num
+          shift: [hx, hy]
+        - ref: mirror_matrix_inner_space
+          shift: [hx, -hy-1u]
+        # - ref: matrix_pinky_space
+        #   shift: [hx, hy-7]
+        - ref: mirror_matrix_pinky_space
+          shift: [hx, -hy-3]
+        - ref: mirror_matrix_macro_space
+          shift: [-hx, -hy]
+      fillet: 2
+  rightcutout:
+    - name: rightboard
+    - operation: subtract
+      name: leftkeys
+
 pcbs:
   left:
     outlines:
       main:
-        outline: left_pcb
+        outline: leftboard
     footprints:
       mx_hotswap:
         where: true
@@ -117,12 +161,12 @@ pcbs:
         adjust:
           shift: [0, -5]
       # microcontroller
-      nice_nano:
-        what: nice_nano
-        params:
-          orientation: up
-        where:
-          ref: matrix_inner_space
-          shift: [-0.5u, -1u]
-          rotate: 180
-          # battery jack
+      # nice_nano:
+      #   what: nice_nano
+      #   params:
+      #     orientation: up
+      #   where:
+      #     ref: matrix_inner_space
+      #     shift: [-0.5u, -1u]
+      #     rotate: 180
+      # battery jack
