@@ -249,7 +249,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "left.kicad_pro",
+    "filename": "right.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -290,23 +290,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "macro_space"
+        "pattern": "mirror_macro_space"
       },
       {
         "netclass": "Default",
-        "pattern": "macro_bottom"
+        "pattern": "mirror_macro_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "macro_home"
+        "pattern": "mirror_macro_home"
       },
       {
         "netclass": "Default",
-        "pattern": "macro_top"
+        "pattern": "mirror_macro_top"
       },
       {
         "netclass": "Default",
-        "pattern": "macro_num"
+        "pattern": "mirror_macro_num"
       },
       {
         "netclass": "Default",
@@ -314,23 +314,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "outer_space"
+        "pattern": "mirror_outer_space"
       },
       {
         "netclass": "Default",
-        "pattern": "outer_bottom"
+        "pattern": "mirror_outer_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "outer_home"
+        "pattern": "mirror_outer_home"
       },
       {
         "netclass": "Default",
-        "pattern": "outer_top"
+        "pattern": "mirror_outer_top"
       },
       {
         "netclass": "Default",
-        "pattern": "outer_num"
+        "pattern": "mirror_outer_num"
       },
       {
         "netclass": "Default",
@@ -338,23 +338,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_space"
+        "pattern": "mirror_pinky_space"
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_bottom"
+        "pattern": "mirror_pinky_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_home"
+        "pattern": "mirror_pinky_home"
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_top"
+        "pattern": "mirror_pinky_top"
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_num"
+        "pattern": "mirror_pinky_num"
       },
       {
         "netclass": "Default",
@@ -362,23 +362,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "ring_space"
+        "pattern": "mirror_ring_space"
       },
       {
         "netclass": "Default",
-        "pattern": "ring_bottom"
+        "pattern": "mirror_ring_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "ring_home"
+        "pattern": "mirror_ring_home"
       },
       {
         "netclass": "Default",
-        "pattern": "ring_top"
+        "pattern": "mirror_ring_top"
       },
       {
         "netclass": "Default",
-        "pattern": "ring_num"
+        "pattern": "mirror_ring_num"
       },
       {
         "netclass": "Default",
@@ -386,23 +386,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "middle_space"
+        "pattern": "mirror_middle_space"
       },
       {
         "netclass": "Default",
-        "pattern": "middle_bottom"
+        "pattern": "mirror_middle_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "middle_home"
+        "pattern": "mirror_middle_home"
       },
       {
         "netclass": "Default",
-        "pattern": "middle_top"
+        "pattern": "mirror_middle_top"
       },
       {
         "netclass": "Default",
-        "pattern": "middle_num"
+        "pattern": "mirror_middle_num"
       },
       {
         "netclass": "Default",
@@ -410,23 +410,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "index_space"
+        "pattern": "mirror_index_space"
       },
       {
         "netclass": "Default",
-        "pattern": "index_bottom"
+        "pattern": "mirror_index_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "index_home"
+        "pattern": "mirror_index_home"
       },
       {
         "netclass": "Default",
-        "pattern": "index_top"
+        "pattern": "mirror_index_top"
       },
       {
         "netclass": "Default",
-        "pattern": "index_num"
+        "pattern": "mirror_index_num"
       },
       {
         "netclass": "Default",
@@ -434,23 +434,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "inner_space"
+        "pattern": "mirror_inner_space"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_bottom"
+        "pattern": "mirror_inner_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_home"
+        "pattern": "mirror_inner_home"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_top"
+        "pattern": "mirror_inner_top"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_num"
+        "pattern": "mirror_inner_num"
       },
       {
         "netclass": "Default",
@@ -544,13 +544,7 @@
     "bus_aliases": {},
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
-    "top_level_sheets": [
-      {
-        "filename": "left.kicad_sch",
-        "name": "left",
-        "uuid": "00000000-0000-0000-0000-000000000000"
-      }
-    ]
+    "top_level_sheets": []
   },
   "sheets": [],
   "text_variables": {},
