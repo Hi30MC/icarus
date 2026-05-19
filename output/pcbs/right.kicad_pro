@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.508
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.508,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [],
@@ -286,7 +302,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P104"
+        "pattern": "P024"
       },
       {
         "netclass": "Default",
@@ -310,7 +326,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P011"
+        "pattern": "P100"
       },
       {
         "netclass": "Default",
@@ -334,7 +350,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P100"
+        "pattern": "P011"
       },
       {
         "netclass": "Default",
@@ -358,7 +374,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P024"
+        "pattern": "P104"
       },
       {
         "netclass": "Default",
@@ -382,7 +398,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P022"
+        "pattern": "P106"
       },
       {
         "netclass": "Default",
@@ -422,14 +438,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "mirror_index_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_index_num"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P017"
       },
       {
@@ -454,10 +462,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P031"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P029"
       },
       {
@@ -471,6 +475,18 @@
       {
         "netclass": "Default",
         "pattern": "P113"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P031"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_index_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_index_num"
       },
       {
         "netclass": "Default",
@@ -510,19 +526,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P106"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P101"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P102"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P107"
+        "pattern": "P022"
       },
       {
         "netclass": "Default",
@@ -544,7 +548,13 @@
     "bus_aliases": {},
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
-    "top_level_sheets": []
+    "top_level_sheets": [
+      {
+        "filename": "right.kicad_sch",
+        "name": "right",
+        "uuid": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
   },
   "sheets": [],
   "text_variables": {},

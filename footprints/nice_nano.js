@@ -1,3 +1,6 @@
+// NOTE: PINS 31-33 ARE REMOVED DUE TO CONFLICTS ON THIS BOARD AND NON-USE.
+// THIS FILE HAS THE ORIGINAL LINES COMMENTED OUT.
+
 // Nice!NanoV2
 // Params
 //  orientation: default is down
@@ -6,63 +9,63 @@
 
 module.exports = {
   params: {
-    designator: 'MCU',
-    orientation: 'down',
-    RAW: {type: 'net', value: 'RAW'},
-    GND: {type: 'net', value: 'GND'},
-    RST: {type: 'net', value: 'RST'},
-    VCC: {type: 'net', value: 'VCC'},
-    P031: {type: 'net', value: 'P031'},
-    P029: {type: 'net', value: 'P029'},
-    P002: {type: 'net', value: 'P002'},
-    P115: {type: 'net', value: 'P115'},
-    P113: {type: 'net', value: 'P113'},
-    P111: {type: 'net', value: 'P111'},
-    P010: {type: 'net', value: 'P010'},
-    P009: {type: 'net', value: 'P009'},
-    P006: {type: 'net', value: 'P006'},
-    P008: {type: 'net', value: 'P008'},
-    P017: {type: 'net', value: 'P017'},
-    P020: {type: 'net', value: 'P020'},
-    P022: {type: 'net', value: 'P022'},
-    P024: {type: 'net', value: 'P024'},
-    P100: {type: 'net', value: 'P100'},
-    P011: {type: 'net', value: 'P011'},
-    P104: {type: 'net', value: 'P104'},
-    P106: {type: 'net', value: 'P106'},
-    P101: {type: 'net', value: 'P101'},
-    P102: {type: 'net', value: 'P102'},
-    P107: {type: 'net', value: 'P107'}
+    designator: "MCU",
+    orientation: "down",
+    RAW: { type: "net", value: "RAW" },
+    GND: { type: "net", value: "GND" },
+    RST: { type: "net", value: "RST" },
+    VCC: { type: "net", value: "VCC" },
+    P031: { type: "net", value: "P031" },
+    P029: { type: "net", value: "P029" },
+    P002: { type: "net", value: "P002" },
+    P115: { type: "net", value: "P115" },
+    P113: { type: "net", value: "P113" },
+    P111: { type: "net", value: "P111" },
+    P010: { type: "net", value: "P010" },
+    P009: { type: "net", value: "P009" },
+    P006: { type: "net", value: "P006" },
+    P008: { type: "net", value: "P008" },
+    P017: { type: "net", value: "P017" },
+    P020: { type: "net", value: "P020" },
+    P022: { type: "net", value: "P022" },
+    P024: { type: "net", value: "P024" },
+    P100: { type: "net", value: "P100" },
+    P011: { type: "net", value: "P011" },
+    P104: { type: "net", value: "P104" },
+    P106: { type: "net", value: "P106" },
+    // P101: {type: 'net', value: 'P101'},
+    // P102: {type: 'net', value: 'P102'},
+    // P107: {type: 'net', value: 'P107'}
   },
-  body: p => {
+  body: (p) => {
     const standard = `
       (module nice_nano (layer F.Cu) (tedit 6058B206)
       ${p.at /* parametric position */}
 
-      ${'' /* footprint reference */}
+      ${"" /* footprint reference */}
       (fp_text reference "${p.ref}" (at 0 0) (layer F.SilkS) ${p.ref_hide} (effects (font (size 1.2 1.2) (thickness 0.2032))))
       (fp_text value nice_nano (at 0 0) (layer F.SilkS) hide (effects (font (size 1.2 1.2) (thickness 0.2032))))
 
-      ${''/* illustration of the (possible) USB port overhang */}
+      ${"" /* illustration of the (possible) USB port overhang */}
       (fp_line (start -14.224 -3.556) (end -14.224 3.81) (layer Dwgs.User) (width 0.2))
       (fp_line (start -14.224 3.81) (end -19.304 3.81) (layer Dwgs.User) (width 0.2))
       (fp_line (start -19.304 3.81) (end -19.304 -3.556) (layer Dwgs.User) (width 0.2))
       (fp_line (start -19.304 -3.556) (end -14.224 -3.556) (layer Dwgs.User) (width 0.2))
 
-      ${''/* component outline */}
+      ${"" /* component outline */}
       (fp_line (start 15.24 -8.89) (end -17.78 -8.89) (layer F.SilkS) (width 0.381))
       (fp_line (start 15.24 8.89) (end 15.24 -8.89) (layer F.SilkS) (width 0.381))
       (fp_line (start -17.78 8.89) (end 15.24 8.89) (layer F.SilkS) (width 0.381))
       (fp_line (start -17.78 -8.89) (end -17.78 8.89) (layer F.SilkS) (width 0.381))
-      
+
       (fp_line (start 15.24 -8.89) (end -17.78 -8.89) (layer B.SilkS) (width 0.381))
       (fp_line (start 15.24 8.89) (end 15.24 -8.89) (layer B.SilkS) (width 0.381))
       (fp_line (start -17.78 8.89) (end 15.24 8.89) (layer B.SilkS) (width 0.381))
       (fp_line (start -17.78 -8.89) (end -17.78 8.89) (layer B.SilkS) (width 0.381))
-      `
+      `;
     function pins(def_neg, def_pos) {
       return `
-        ${''/* pin names */}
+        ${"" /* pin names */}
         (fp_text user RAW (at -13.97 ${def_pos}5.473715 ${p.rot + 90}) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
         (fp_text user GND (at -11.43 ${def_pos}5.454667 ${p.rot + 90}) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
         (fp_text user RST (at -8.89 ${def_pos}5.588 ${p.rot + 90}) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
@@ -111,7 +114,7 @@ module.exports = {
 
         (fp_text user nice!nano (at 13.462 ${def_pos}0.254 ${p.rot + 90}) (layer F.SilkS) (effects (font (size 1.5 1.5) (thickness 0.3))))
 
-        ${''/* and now the actual pins */}
+        ${"" /* and now the actual pins */}
         (pad 1 thru_hole circle (at -13.97 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P006.str})
         (pad 2 thru_hole circle (at -11.43 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P008.str})
         (pad 3 thru_hole circle (at -8.89 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.GND.str})
@@ -124,7 +127,7 @@ module.exports = {
         (pad 10 thru_hole circle (at 8.89 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P011.str})
         (pad 11 thru_hole circle (at 11.43 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P104.str})
         (pad 12 thru_hole circle (at 13.97 ${def_neg}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P106.str})
-        
+
         (pad 13 thru_hole circle (at 13.97 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P009.str})
         (pad 14 thru_hole circle (at 11.43 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P010.str})
         (pad 15 thru_hole circle (at 8.89 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P111.str})
@@ -137,22 +140,22 @@ module.exports = {
         (pad 22 thru_hole circle (at -8.89 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.RST.str})
         (pad 23 thru_hole circle (at -11.43 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.GND.str})
         (pad 24 thru_hole circle (at -13.97 ${def_pos}7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.RAW.str})
-
-        (pad 31 thru_hole circle (at 8.89 5.08) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P101.str})
-        (pad 32 thru_hole circle (at 8.89 2.54) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P102.str})
-        (pad 33 thru_hole circle (at 8.89 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P107.str})
-        `
-      }
-      if(p.orientation == 'down') {
-        return `
-          ${standard}
-          ${pins('-', '')})
-          `
-      } else {
-        return `
-          ${standard}
-          ${pins('', '-')})
-          `
-      }
+        `;
+      // (pad 31 thru_hole circle (at 8.89 5.08) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P101.str})
+      // (pad 32 thru_hole circle (at 8.89 2.54) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P102.str})
+      // (pad 33 thru_hole circle (at 8.89 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.P107.str})
+      // `;
     }
-  }
+    if (p.orientation == "down") {
+      return `
+          ${standard}
+          ${pins("-", "")})
+          `;
+    } else {
+      return `
+          ${standard}
+          ${pins("", "-")})
+          `;
+    }
+  },
+};

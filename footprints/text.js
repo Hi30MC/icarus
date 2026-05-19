@@ -12,7 +12,7 @@ module.exports = {
     const justify = (p.justify && `(justify ${p.justify})`) || "";
     return `
             (gr_text "${p.text}" ${p.at} (layer ${p.layer})
-                (effects (font (size ${p.h_size} ${p.v_size}) (thickness ${p.thickness}) ${p.style}) ${justify})
+                (effects (font (size ${p.h_size} ${p.v_size}) (thickness ${p.thickness}) (face "${p.style}")) ${justify})
             )
         `;
   },

@@ -2,6 +2,8 @@ units:
   # padding
   px: u + 4
   py: u + 4
+  # half tile
+  hu: u / 2
   # half padding
   hx: px / 2
   hy: py / 2
@@ -14,17 +16,17 @@ points:
         shift: [100, -200]
       columns:
         macro:
-          key.column_net: P104
+          key.column_net: P024
         outer:
-          key.column_net: P011
+          key.column_net: P100
         pinky:
           key.stagger: 3
-          key.column_net: P100
+          key.column_net: P011
         ring:
-          key.column_net: P024
-          key.stagger: 3 + u
+          key.column_net: P104
+          key.stagger: 3
         middle:
-          key.column_net: P022
+          key.column_net: P106
           key.stagger: 5
         index:
           key.column_net: P020
@@ -34,15 +36,15 @@ points:
           key.stagger: -6
       rows:
         space:
-          row_net: P031
-        bottom:
           row_net: P029
-        home:
+        bottom:
           row_net: P002
-        top:
+        home:
           row_net: P115
-        num:
+        top:
           row_net: P113
+        num:
+          row_net: P031
   # rotate: -15
   mirror:
     ref: matrix_inner_num
@@ -64,31 +66,15 @@ outlines:
         - ref: matrix_macro_num
           shift: [-0.5px, 0.5py]
         - ref: matrix_pinky_num
-          shift: [-0.5px, 0.5py-3]
-        - ref: matrix_pinky_num
-          shift: [-0.5px, 0.5py]
+          shift: [-hx, 0.5py-3]
         - ref: matrix_ring_num
-          shift: [-0.5px, -0.5py+1]
-        - ref: matrix_ring_num
-          shift: [-0.5px, 0.5py]
-        - ref: matrix_middle_num
-          shift: [-hx, hy - 5]
-        - ref: matrix_middle_num
-          shift: [-hx, hy]
+          shift: [hu, hy+5]
         - ref: matrix_index_num
-          shift: [-hx, hy + 5]
-        # - ref: matrix_index_num
-        #   shift: [-hx, hy]
-        # - ref: matrix_inner_num
-        #   shift: [-hx , hy+ 6]
-        # - ref: matrix_inner_num
-        #   shift: [-hx, hy]
+          shift: [-hu, hy + 5]
         - ref: matrix_inner_num
           shift: [hx, hy]
         - ref: matrix_inner_space
-          shift: [hx, -hy-1u]
-        # - ref: matrix_pinky_space
-        #   shift: [hx, hy-7]
+          shift: [hx, -hy]
         - ref: matrix_pinky_space
           shift: [hx, -hy-3]
         - ref: matrix_macro_space
@@ -103,38 +89,20 @@ outlines:
       operation: stack
       points:
         - ref: matrix_macro_num
-          shift: [-0.5px - cs, 0.5py + cs]
+          shift: [-0.5px-cs, 0.5py+cs]
         - ref: matrix_pinky_num
-          shift: [-0.5px - cs, 0.5py - 3 + cs]
-        - ref: matrix_pinky_num
-          shift: [-0.5px - cs, 0.5py + cs]
+          shift: [-hx-cs, 0.5py-3+cs]
         - ref: matrix_ring_num
-          shift: [-0.5px - cs, -0.5py + 1 + cs]
-        - ref: matrix_ring_num
-          shift: [-0.5px - cs, 0.5py + cs]
-        - ref: matrix_middle_num
-          shift: [-hx - cs, hy - 5 + cs]
-        - ref: matrix_middle_num
-          shift: [-hx - cs, hy + cs]
+          shift: [hu-cs, hy+5+cs]
         - ref: matrix_index_num
-          shift: [-hx - cs, hy + 5 + cs]
-        # - ref: matrix_index_num
-        #   shift: [-hx, hy]
-        # - ref: matrix_inner_num
-        #   shift: [-hx , hy+ 6]
-        # - ref: matrix_inner_num
-        #   shift: [-hx, hy]
+          shift: [-hu+cs, hy + 5+cs]
         - ref: matrix_inner_num
-          shift: [hx + cs, hy + cs]
+          shift: [hx+cs, hy+cs]
         - ref: matrix_inner_space
-          shift: [hx + cs, -hy-1u - cs]
-        # - ref: matrix_pinky_space
-        #   shift: [hx, hy-7]
-        - ref: matrix_pinky_space
-          shift: [hx + cs, -hy-3 - cs]
+          shift: [hx+cs, -hy-cs]
         - ref: matrix_macro_space
-          shift: [-hx - cs, -hy - cs]
-      fillet: 2
+          shift: [-hx-cs, -hy-cs]
+      # fillet: 2
   leftcasecutout:
     - name: leftcase
     - operation: subtract
@@ -146,31 +114,15 @@ outlines:
         - ref: mirror_matrix_macro_num
           shift: [-0.5px, 0.5py]
         - ref: mirror_matrix_pinky_num
-          shift: [-0.5px, 0.5py-3]
-        - ref: mirror_matrix_pinky_num
-          shift: [-0.5px, 0.5py]
+          shift: [-hx, 0.5py-3]
         - ref: mirror_matrix_ring_num
-          shift: [-0.5px, -0.5py+1]
-        - ref: mirror_matrix_ring_num
-          shift: [-0.5px, 0.5py]
-        - ref: mirror_matrix_middle_num
-          shift: [-hx, hy - 5]
-        - ref: mirror_matrix_middle_num
-          shift: [-hx, hy]
+          shift: [hu, hy+5]
         - ref: mirror_matrix_index_num
-          shift: [-hx, hy + 5]
-        # - ref: matrix_index_num
-        #   shift: [-hx, hy]
-        # - ref: matrix_inner_num
-        #   shift: [-hx , hy+ 6]
-        # - ref: matrix_inner_num
-        #   shift: [-hx, hy]
+          shift: [-hu, hy + 5]
         - ref: mirror_matrix_inner_num
           shift: [hx, hy]
         - ref: mirror_matrix_inner_space
-          shift: [hx, -hy-1u]
-        # - ref: matrix_pinky_space
-        #   shift: [hx, hy-7]
+          shift: [hx, -hy]
         - ref: mirror_matrix_pinky_space
           shift: [hx, -hy-3]
         - ref: mirror_matrix_macro_space
@@ -187,36 +139,18 @@ outlines:
         - ref: mirror_matrix_macro_num
           shift: [-0.5px-cs, 0.5py+cs]
         - ref: mirror_matrix_pinky_num
-          shift: [-0.5px-cs, 0.5py-3+cs]
-        - ref: mirror_matrix_pinky_num
-          shift: [-0.5px-cs, 0.5py+cs]
+          shift: [-hx-cs, 0.5py-3+cs]
         - ref: mirror_matrix_ring_num
-          shift: [-0.5px-cs, -0.5py+1+cs]
-        - ref: mirror_matrix_ring_num
-          shift: [-0.5px-cs, 0.5py+cs]
-        - ref: mirror_matrix_middle_num
-          shift: [-hx-cs, hy - 5+cs]
-        - ref: mirror_matrix_middle_num
-          shift: [-hx-cs, hy+cs]
+          shift: [hu-cs, hy+5+cs]
         - ref: mirror_matrix_index_num
-          shift: [-hx-cs, hy + 5+cs]
-        # - ref: matrix_index_num
-        #   shift: [-hx, hy]
-        # - ref: matrix_inner_num
-        #   shift: [-hx , hy+ 6]
-        # - ref: matrix_inner_num
-        #   shift: [-hx, hy]
+          shift: [-hu+cs, hy + 5+cs]
         - ref: mirror_matrix_inner_num
           shift: [hx+cs, hy+cs]
         - ref: mirror_matrix_inner_space
-          shift: [hx+cs, -hy-1u-cs]
-        # - ref: matrix_pinky_space
-        #   shift: [hx, hy-7]
-        - ref: mirror_matrix_pinky_space
-          shift: [hx+cs, -hy-3-cs]
+          shift: [hx+cs, -hy-cs]
         - ref: mirror_matrix_macro_space
           shift: [-hx-cs, -hy-cs]
-      fillet: 2
+      # fillet: 2
   rightcasecutout:
     - name: rightcase
     - operation: subtract
@@ -228,7 +162,7 @@ pcbs:
         outline: leftboard
     footprints:
       mx_hotswap:
-        where: /^matrix_.*/
+        where: /^matrix_(?!(?:index_num|index_top)).*/
         what: mx
         params:
           keycaps: true
@@ -236,28 +170,68 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        where: /^matrix_.*/
+        where: /^matrix_(?!(?:index_num|index_top|inner_num)).*/
         what: diode
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+      # hotswap for mx keys near controller and battery jack rot 180
+      mx_hotswap_near_controller:
+        where: /^matrix_(?:index_num|index_top).*/
+        what: mx
+        params:
+          keycaps: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: -180
+      diode_1:
+        where: /^matrix_index_top.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, 5]
+          rotate: 0
+      # diode for mx keys near battery jack rot 90
+      diode_2:
+        where: /^matrix_index_num.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, 8]
+          rotate: 180
+      # diode for mx keys near battery jack rot 90
+      diode_3:
+        where: /^matrix_inner_num.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -hu]
+          rotate: 0
       # microcontroller
       nice_nano:
         what: nice_nano
         params:
           orientation: up
         where:
-          ref: matrix_inner_space
-          shift: [-0.5u, -1u]
-          rotate: 180
+          ref: matrix_inner_num
+          shift: [-hu+1.5, 2.5]
+          rotate: -180
       # battery jack
       jstph:
         what: jstph
         where:
-          ref: matrix_inner_space
-          shift: [0, u/2]
+          ref: matrix_inner_home
+          shift: [hu, hu+0.25]
           rotate: -90
         params:
           side: B
@@ -271,15 +245,15 @@ pcbs:
           from: GND
           to: RST
         where:
-          ref: matrix_inner_bottom
-          shift: [9.0, 0.8-1.2u]
-          rotate: -90.0
+          ref: matrix_inner_top
+          shift: [hu, 0]
+          rotate: -90
       # Battery on/off switch
       battery_switch:
         what: slider
         where:
-          ref: matrix_inner_bottom
-          shift: [8.8, -6]
+          ref: matrix_inner_top
+          shift: [hu, hu]
           rotate: -90
         params:
           side: B
@@ -290,46 +264,47 @@ pcbs:
         what: text
         where: &textWhere
           ref: matrix_middle_space
-          shift: [-(u/2)+2.5, -hy-1.5]
+          shift: [0, -hy-7.2]
         params: &textParams
           text: Icarus
           justify: left
-          h_size: 3.0
-          v_size: 3.0
-          thickness: 0.4
+          h_size: 6.0
+          v_size: 6.0
+          thickness: 0.8
+          style: Hasklug Nerd Font Mono
       # holes in PCB
       hole_bottom_left:
         what: mountinghole
         where:
           ref: matrix_macro_space
-          shift: [u/2, u/2]
+          shift: [hu, hu]
       hole_top_left:
         what: mountinghole
         where:
           ref: matrix_macro_num
-          shift: [u/2, -u/2]
+          shift: [hu, -hu]
       hole_center:
         what: mountinghole
         where:
           ref: matrix_middle_home
-          shift: [-u/2, -u/2]
+          shift: [-hu, -hu]
       hole_top_right:
         what: mountinghole
         where:
-          ref: matrix_index_num
-          shift: [-u/2, -u/2]
+          ref: matrix_inner_num
+          shift: [-hu, -hu]
       hole_bottom_right:
         what: mountinghole
         where:
-          ref: matrix_index_space
-          shift: [u/2, -u/2]
+          ref: matrix_inner_space
+          shift: [-hu, hu+4]
   right:
     outlines:
       main:
         outline: rightboard
     footprints:
       mx_hotswap:
-        where: /^mirror_matrix_.*/
+        where: /^mirror_matrix_(?!(?:index_num|index_top)).*/
         what: mx
         params:
           keycaps: true
@@ -337,28 +312,68 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        where: /^mirror_matrix_.*/
+        where: /^mirror_matrix_(?!(?:index_num|index_top|inner_num)).*/
         what: diode
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+      # hotswap for mx keys near controller and battery jack rot 180
+      mx_hotswap_near_controller:
+        where: /^mirror_matrix_(?:index_num|index_top).*/
+        what: mx
+        params:
+          keycaps: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: -180
+      diode_1:
+        where: /^mirror_matrix_index_top.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, 5]
+          rotate: 0
+      # diode for mx keys near battery jack rot 90
+      diode_2:
+        where: /^mirror_matrix_index_num.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, 8]
+          rotate: 180
+      # diode for mx keys near battery jack rot 90
+      diode_3:
+        where: /^mirror_matrix_inner_num.*/
+        what: diode
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -hu]
+          rotate: 0
       # microcontroller
       nice_nano:
         what: nice_nano
         params:
           orientation: up
         where:
-          ref: mirror_matrix_inner_space
-          shift: [-0.5u, -1u]
-          # rotate: 180
+          ref: mirror_matrix_inner_num
+          shift: [-hu+1.5, 2.5]
+          rotate: 0
       # battery jack
       jstph:
         what: jstph
         where:
-          ref: mirror_matrix_inner_space
-          shift: [0, u/2]
+          ref: mirror_matrix_inner_home
+          shift: [hu, hu+0.25]
           rotate: -90
         params:
           side: B
@@ -372,15 +387,15 @@ pcbs:
           from: GND
           to: RST
         where:
-          ref: mirror_matrix_inner_bottom
-          shift: [9.0, 0.8-1.2u]
-          rotate: -90.0
+          ref: mirror_matrix_inner_top
+          shift: [hu, 0]
+          rotate: -90
       # Battery on/off switch
       battery_switch:
         what: slider
         where:
-          ref: mirror_matrix_inner_bottom
-          shift: [8.8, -6]
+          ref: mirror_matrix_inner_top
+          shift: [hu, hu]
           rotate: -90
         params:
           side: B
@@ -391,36 +406,37 @@ pcbs:
         what: text
         where: &textWhere
           ref: mirror_matrix_middle_space
-          shift: [(u/2)-2.5, -hy-1.5]
+          shift: [0, -hy-7.2]
         params: &textParams
           text: Icarus
           justify: left
-          h_size: 3.0
-          v_size: 3.0
-          thickness: 0.4
+          h_size: 6.0
+          v_size: 6.0
+          thickness: 0.8
+          style: Hasklug Nerd Font Mono
       # holes in PCB
       hole_bottom_left:
         what: mountinghole
         where:
           ref: mirror_matrix_macro_space
-          shift: [u/2, u/2]
+          shift: [hu, hu]
       hole_top_left:
         what: mountinghole
         where:
           ref: mirror_matrix_macro_num
-          shift: [u/2, -u/2]
+          shift: [hu, -hu]
       hole_center:
         what: mountinghole
         where:
           ref: mirror_matrix_middle_home
-          shift: [-u/2, -u/2]
+          shift: [-hu, -hu]
       hole_top_right:
         what: mountinghole
         where:
-          ref: mirror_matrix_index_num
-          shift: [-u/2, -u/2]
+          ref: mirror_matrix_inner_num
+          shift: [-hu, -hu]
       hole_bottom_right:
         what: mountinghole
         where:
-          ref: mirror_matrix_index_space
-          shift: [u/2, -u/2]
+          ref: mirror_matrix_inner_space
+          shift: [-hu, hu+4]
