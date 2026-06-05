@@ -1911,18 +1911,18 @@
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/components/nicenano-v2.step"
 			(offset
-				(xyz -1.15 0 -5.8)
+				(xyz -1.15 0 -4.394)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz -180 -180 180)
+				(xyz -0 -180 180)
 			)
 		)
 		(model "${KIPRJMOD}/components/310-43-105-41-105000.stp"
 			(offset
-				(xyz 2.8 -6.4 -4.45)
+				(xyz 2.8 -6.4 -4.394)
 			)
 			(scale
 				(xyz 1 1 1)
@@ -3348,7 +3348,7 @@
 			(uuid "9c6fa8df-1c03-4cfb-ac25-eebc246e426c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/components/PG151101S11--3DModel-STEP-1.STEP"
+		(model "/home/zephyr/Documents/icarus/final_pcbs/components/PG151101S11--3DModel-STEP-1.STEP"
 			(offset
 				(xyz -0.6 3.8 -1.6)
 			)

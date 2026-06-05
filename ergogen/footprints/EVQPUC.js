@@ -42,6 +42,9 @@ module.exports = {
         (pad "1" smd rect (at 2.625 -0.85 ${p.rot}) (size 1.55 1) (layers "${p.side}.Cu" "${p.side}.Paste" "${p.side}.Mask") ${p.from.str})
         (pad "2" smd rect (at -2.625 0.85 ${p.rot}) (size 1.55 1) (layers "${p.side}.Cu" "${p.side}.Paste" "${p.side}.Mask") ${p.to.str})
         (pad "2" smd rect (at 2.625 0.85 ${p.rot}) (size 1.55 1) (layers "${p.side}.Cu" "${p.side}.Paste" "${p.side}.Mask") ${p.to.str})
+
+        ${"" /* 3d model */}
+        (model "$HOME/Documents/icarus/final_pcbs/components/EVQPUL02K.stp" (offset (xyz 0 0 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz 90 -0 -0)))
     )
 
     `,
