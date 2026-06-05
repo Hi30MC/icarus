@@ -1,7 +1,7 @@
-// ignore kicad backup history
+# ignore kicad backup history
 **/.history
 
-// ignore gerbers
+# ignore gerbers
 *_gerber.zip
 **/left_gerber/*
 **/right_gerber/*
