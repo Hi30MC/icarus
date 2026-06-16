@@ -9,3 +9,7 @@ The corresponding PCB outputs from Ergogen were traced in KiCad. The final trace
 
 # Case files
 The case files were constructed in Onshape. One can view these files [here](https://cad.onshape.com/documents/795d5125a76cdfb5a48cf88b/w/a7573c951f90309017d525a7/e/47b874ca74b5b2133d47f936). There are also STEP files in this repo, in the `case_files` folder.
+
+# ZMK configuration.
+
+Icarus currently runs ZMK. The configuration repository and current firmware can be found [here](https://github.com/Hi30MC/zmk-config).
