@@ -8,4 +8,4 @@ The keyboard and pcb layout were generated using Ergogen locally. The config fil
 The corresponding PCB outputs from Ergogen were traced in KiCad. The final traced PCBs, along with exported STEP files are found in the `final_pcbs` folder.
 
 # Case files
-The case files were constructed in Onshape. One can view these files [here](https://cad.onshape.com/documents/795d5125a76cdfb5a48cf88b/w/a7573c951f90309017d525a7/e/47b874ca74b5b2133d47f936). There are also STEP files in this repo, in the `case_files` folder.
+The case files were constructed in Onshape. One can view these files [here](https://cad.onshape.com/documents/795d5125a76cdfb5a48cf88b/w/a7573c951f90309017d525a7/e/47b874ca74b5b2133d47f936). There are also STEP files in this repo, in the `case_files` folder. Note that the case files provided are for the left side of the keyboard only, and the right side is simply a mirror image of the left side.
