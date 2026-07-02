@@ -65,8 +65,10 @@ module.exports = {
         (pad 1 smd rect (at ${def_neg}7.085 -2.54 ${p.r}) (size 2.55 2.5) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${p.from})
         (pad 2 smd rect (at ${def_pos}5.842 -5.08 ${p.r}) (size 2.55 2.5) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${p.to})
 
-        ${"" /* 3D model */}
+        ${"" /* 3D models */}
         (model "$HOME/Documents/icarus/final_pcbs/components/PG151101S11--3DModel-STEP-1.STEP" (offset (xyz -0.6 3.8 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz -90 -180 -180)))
+        (model "$HOME/Documents/icarus/final_pcbs/components/MX1A-11NN--3DModel-STEP-510211.STEP" (rotate (xyz -90 0 0)))
+        (model "$HOME/Documents/icarus/final_pcbs/components/moa_cap.step" (offset (xyz 0 0 8.74)))
         `;
       } else {
         return `
